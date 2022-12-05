@@ -124,33 +124,33 @@ function draw() {
 }
 
 function mousePressed() {
-  if((mouseY>=5)&&(mouseY<=55)){
+  if((mouseY>=15)&&(mouseY<=85)){
     if(song1.isPlaying()){
       song1.stop();
       danceTime=false;
     }
     if(song2.isPlaying()){
       song2.stop();
-      danceTime2=false;
+      danceTime=false;
     }
     if(song3.isPlaying()){
       song3.stop();
-      danceTime3=false;
+      danceTime=false;
     }
-    if((mouseX>=windowWidth/4-50) && (mouseX<=windowWidth/4+50)){
+    if((mouseX>=windowWidth/4-60) && (mouseX<=windowWidth/4+60)){
       song1.play();
       song1.jump(30);
       danceTime=true;
       //mic.start();
       
     }
-    else if((mouseX>= windowWidth/2-50) && (mouseX<=windowWidth/2+50)){
+    else if((mouseX>= windowWidth/2-60) && (mouseX<=windowWidth/2+60)){
       song2.play();
-      danceTime2=true;
+      danceTime=true;
     }
-    else if((mouseX>= windowWidth*0.75-50) && (mouseX<=windowWidth*0.75+50)){
+    else if((mouseX>= windowWidth*0.75-60) && (mouseX<=windowWidth*0.75+60)){
       song3.play();
-      danceTime3=true;
+      danceTime=true;
     }
   }
 }
