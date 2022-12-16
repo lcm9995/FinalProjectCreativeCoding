@@ -1,16 +1,17 @@
 
 // to do
-// make stage
-// add more user input, reintegrate mic and maybe karoake
 // add spin and other tricks for frog to do
-// also maybe add more music visualization
 //crowd cheering - button
 //pirouette - button 
 //add tongue - button 
-// figure out html file and libraries
-//make eyes bulge 
 //add instructions
 //add when song ends
+//add animations for second song and finalize second song
+//adjust animation size and other properties
+//clean up stage/background
+//curtain down transition
+//adjust top of knees
+//color change lights button
 
 let myDancer; //frog
 let song1; //song 1 sound
@@ -45,6 +46,9 @@ var greens=[10, 30, 250, 250, 250, 47, 238];
 var blues=[180, 200, 250, 81, 244, 255, 46];
 let astroworld;
 let xcx;
+let xcxworld;
+let vroomvroom;
+let saturn;
 
 var scaledAmp;
 
@@ -55,7 +59,11 @@ function preload() {
 	//cheering = loadSound('Applauding-and-cheering.mp3');
 	astroworld= loadImage('Astroworld-Logo.png');
 	xcx = loadImage('asset_1.png');
+	xcxworld = loadImage('asset_2.png');
+	//vroom = loadImage('asset_3.png');
+	vroomvroom = loadAni('frame_00.png', 17);
 	curtainimg = loadImage('istockphoto-172517528-170667a.jpg');
+	saturn = loadAni('saturn_00.png', 12);
 }//preload
 
 function setup() {
@@ -303,11 +311,14 @@ function backdrop(){
 			imageMode(CENTER);
 			image(astroworld, windowWidth/2, windowHeight-100, windowWidth/3*map(currentAmp, 0, 0.5, 1, 1.5), 200);
 			//image(astroworld, random(100, windowWidth-100), random(100, windowHeight-200), windowWidth/4, 150);
+			animation(saturn, 200, 200, 0.2, 0.2);
 		}
 		if(song3.isPlaying()){
 			imageMode(CENTER);
 			image(xcx, windowWidth/2, 150, windowWidth/5*map(currentAmp, 0, 0.4, 1, 2), 150);
-			tint(250);
+			image(xcxworld, 200, windowHeight/2);
+			//image(vroom, windowWidth-200, windowHeight/2);
+			animation(vroomvroom, windowWidth-200, windowHeight/2);
 		}
 }//mouseclicked function
 	
@@ -336,12 +347,12 @@ class Dancer {
 		
 		noStroke();
 		fill(255);
-		ellipse(this.x+25, this.y-262+this.w, 22+map(scaledAmp, 0.1, 0.4, 0, 10), 30+map(scaledAmp, 0.25, 0.5, 0, 10)); //eyeball right
-		ellipse(this.x-25, this.y-262+this.w, 22+map(scaledAmp, 0.1, 0.4, 0, 10), 30+map(scaledAmp, 0.25, 0.5, 0, 10)); //eyeball left
+		ellipse(this.x+25, this.y-262+this.w, 22+map(scaledAmp, 0.1, 0.4, 0, 7), 30+map(scaledAmp, 0.25, 0.5, 0, 10)); //eyeball right
+		ellipse(this.x-25, this.y-262+this.w, 22+map(scaledAmp, 0.1, 0.4, 0, 7), 30+map(scaledAmp, 0.25, 0.5, 0, 10)); //eyeball left
 		
 		fill(0);
-		ellipse(this.x+25, this.y-262+this.w, 10+map(scaledAmp, 0.1, 0.4, 0, 10), 20 + map(scaledAmp, 0.3, 0.5, 0, 10)); //pupil right
-		ellipse(this.x-25, this.y-262+this.w, 10+map(scaledAmp, 0.1, 0.4, 0, 10), 20+ map(scaledAmp, 0.3, 0.5, 0, 10)); //pupil left
+		ellipse(this.x+25, this.y-262+this.w, 10+map(scaledAmp, 0.1, 0.4, 0, 2), 20 + map(scaledAmp, 0.3, 0.5, 0, 4)); //pupil right
+		ellipse(this.x-25, this.y-262+this.w, 10+map(scaledAmp, 0.1, 0.4, 0, 2), 20+ map(scaledAmp, 0.3, 0.5, 0, 4)); //pupil left
 	
 		fill(250, 157, 221, 100);
 		circle(this.x+30, this.y-240+this.w, 20); //cheek right
@@ -360,7 +371,7 @@ class Dancer {
 		
 		stroke(138, 240, 82);
 		strokeWeight(10);
-		line(this.x, this.y-190+this.w, this.x, this.y-170+this.w); // neck
+		line(this.x, this.y-190+this.w, this.x, this.y-170+this.w*.7); // neck
 	}//head
 	
 	body(e){
