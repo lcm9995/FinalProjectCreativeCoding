@@ -48,17 +48,17 @@ var rainX=[]; //x values of the rain for the third song
 var rainY=[]; //y values of the rain for the third song
 
 function preload() {
-	song1 = loadSound('Travis_Scott_SICKO_MODE.mp3'); //all mp3s downloaded from https://myfreemp3.to/
-	song2 = loadSound('Charli_XCX_Vroom_Vroom.mp3');
-	song3 = loadSound('Purple_Rain.mp3');
-	astroworld= loadImage('Astroworld-Logo.png'); // from https://www.google.com/url?sa=i&url=https%3A%2F%2Flogos-world.net%2Fastroworld-logo%2F&psig=AOvVaw24mR7z7WBPGn4_Bqqz5__S&ust=1671529768008000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJiXmOSzhfwCFQAAAAAdAAAAABAD
-	xcx = loadImage('asset_1.png'); // from https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACharli_XCX_Logo.svg&psig=AOvVaw2QFNoL5-5LXHv2F6QVAsgT&ust=1671529798137000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjQu_OzhfwCFQAAAAAdAAAAABAI
-	xcxworld = loadImage('asset_2.png'); // from https://www.google.com/url?sa=i&url=http%3A%2F%2Flanaboards.com%2Ftopic%2F614-charli-xcx%2Fpage%2F5023%2F&psig=AOvVaw1u19ZggGWRycKZyk54OCc5&ust=1671529887616000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIC63p20hfwCFQAAAAAdAAAAABAD
-	vroomvroom = loadAni('frame_00.png', 17); //converted to frames from gif from https://media.giphy.com/media/JTz6jJnxo5U91kSf0E/giphy.gif 
-	curtainimg = loadImage('istockphoto-172517528-170667a.jpg'); // getty images stock
-	saturn = loadAni('saturn_00.png', 12); // converted to frames from gif from https://media.giphy.com/media/OPuSF04oCns4dfuZaK/giphy.gif
-	guitar = loadImage('guitar.png'); // https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngfind.com%2Fmpng%2FbwixmT_950-x-527-10-prince-guitar-hd-png%2F&psig=AOvVaw2rsJfSw3o9v-nP35pLCoI8&ust=1671524890601000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCdgdKhhfwCFQAAAAAdAAAAABAD 
-	wings = loadImage('frogwings.png'); //https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-vector%2Fpair-beautiful-white-angel-wings-isolated-transparent-background_13128471.htm&psig=AOvVaw1Dh5t7DbzQr7nOW725nKsP&ust=1671542863755000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLC098bkhfwCFQAAAAAdAAAAABAY 
+	song1 = loadSound('assets/Travis_Scott_SICKO_MODE.mp3'); //all mp3s downloaded from https://myfreemp3.to/
+	song2 = loadSound('assets/Charli_XCX_Vroom_Vroom.mp3');
+	song3 = loadSound('assets/Purple_Rain.mp3');
+	astroworld= loadImage('assets/Astroworld-Logo.png'); // from https://www.google.com/url?sa=i&url=https%3A%2F%2Flogos-world.net%2Fastroworld-logo%2F&psig=AOvVaw24mR7z7WBPGn4_Bqqz5__S&ust=1671529768008000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCJiXmOSzhfwCFQAAAAAdAAAAABAD
+	xcx = loadImage('assets/asset_1.png'); // from https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ACharli_XCX_Logo.svg&psig=AOvVaw2QFNoL5-5LXHv2F6QVAsgT&ust=1671529798137000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIjQu_OzhfwCFQAAAAAdAAAAABAI
+	xcxworld = loadImage('assets/asset_2.png'); // from https://www.google.com/url?sa=i&url=http%3A%2F%2Flanaboards.com%2Ftopic%2F614-charli-xcx%2Fpage%2F5023%2F&psig=AOvVaw1u19ZggGWRycKZyk54OCc5&ust=1671529887616000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCIC63p20hfwCFQAAAAAdAAAAABAD
+	vroomvroom = loadAni('assets/frame_00.png', 17); //converted to frames from gif from https://media.giphy.com/media/JTz6jJnxo5U91kSf0E/giphy.gif 
+	curtainimg = loadImage('assets/istockphoto-172517528-170667a.jpg'); // getty images stock
+	saturn = loadAni('assets/saturn_00.png', 12); // converted to frames from gif from https://media.giphy.com/media/OPuSF04oCns4dfuZaK/giphy.gif
+	guitar = loadImage('assets/guitar.png'); // https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngfind.com%2Fmpng%2FbwixmT_950-x-527-10-prince-guitar-hd-png%2F&psig=AOvVaw2rsJfSw3o9v-nP35pLCoI8&ust=1671524890601000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCKCdgdKhhfwCFQAAAAAdAAAAABAD 
+	wings = loadImage('assets/frogwings.png'); //https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fpremium-vector%2Fpair-beautiful-white-angel-wings-isolated-transparent-background_13128471.htm&psig=AOvVaw1Dh5t7DbzQr7nOW725nKsP&ust=1671542863755000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCLC098bkhfwCFQAAAAAdAAAAABAY 
 }//preload
 
 function setup() {
